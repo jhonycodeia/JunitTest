@@ -6,7 +6,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Verifier;
 
-public class Verifiertests {
+public class VerifierRuleTests {
 
 	/*
 	 * Esta regla puede convertir los métodos de prueba aprobados en pruebas

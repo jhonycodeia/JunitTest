@@ -14,9 +14,16 @@ import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
 
-public class WatchmanTests {
+public class WatchmanRuleTests {
 
 	private static String watchedLog;
+	
+	/*
+	 * Esta regla nos permite tener un control del ciclo de
+	 * las pruebas para realizar cualquier accion si se requiere
+	 * en los diferentes estados que puede llegar una pruebas
+	 * 
+	 * */
 
 	@Rule
 	public final TestRule watchman = new TestWatcher() {
@@ -67,7 +74,7 @@ public class WatchmanTests {
 	}
 	
 	@Test
-	public void skkiped() {
+	public void skipped() {
 		System.out.println("test skipped");
 		Assume.assumeTrue("foo".equals("bar"));
         fail("This should not be reached!");

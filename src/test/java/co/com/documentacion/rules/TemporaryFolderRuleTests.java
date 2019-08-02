@@ -8,7 +8,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
-public class TemporaryFolderTests {
+public class TemporaryFolderRuleTests {
 
 	@Rule/* Exta regla permite crear un archivo temporar mientras se ejecutan pruebas */
 	public final TemporaryFolder folder = new TemporaryFolder();	

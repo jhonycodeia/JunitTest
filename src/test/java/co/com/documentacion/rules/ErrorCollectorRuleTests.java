@@ -6,7 +6,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 
-public class ErrorCollectorTests {
+public class ErrorCollectorRuleTests {
 
 	@Rule /* permite recopilar errores y permitir a la prueba continuar */
 	public final ErrorCollector collector = new ErrorCollector();

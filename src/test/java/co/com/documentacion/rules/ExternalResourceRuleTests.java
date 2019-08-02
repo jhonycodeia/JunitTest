@@ -6,7 +6,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExternalResource;
 
-public class ExternalResourceTests {
+public class ExternalResourceRuleTests {
 	
 	@Rule /* Esta regla simula el mismo comportamiento que los @before and @after */
 	public final ExternalResource resource = new ExternalResource(){
