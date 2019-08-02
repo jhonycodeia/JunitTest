@@ -3,12 +3,13 @@ package co.com.documentacion.parameterized;
 import static org.junit.Assert.*;
 
 import java.util.Arrays;
-import java.util.Collection;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+
+import co.com.fibonacci.Fibonacci;
 
 @RunWith(Parameterized.class)
 public class ParameterizedTests {
@@ -42,16 +43,3 @@ public class ParameterizedTests {
 
 }
 
-class Fibonacci {
-	public static int compute(int n) {
-		int result = 0;
-
-		if (n <= 1) {
-			result = n;
-		} else {
-			result = compute(n - 1) + compute(n - 2);
-		}
-
-		return result;
-	}
-}
