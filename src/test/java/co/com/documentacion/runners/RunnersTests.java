@@ -1,5 +1,6 @@
 package co.com.documentacion.runners;
 
+import java.text.DecimalFormat;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -51,6 +52,17 @@ public class RunnersTests {
 	public void testIgnore() {
 		/* Ignora esta prueba*/
 		System.out.println("Ignora en test");		
+	}
+	
+	@Test
+	public void fomatNumber() {
+		DecimalFormat df = new DecimalFormat("0000000");
+		System.out.println(df.format(9));
+		System.out.println(df.format(99));
+		System.out.println(df.format(9999));
+		System.out.println(df.format(99999));
+		System.out.println(df.format(999999));
+		System.out.println(df.format(9999999));
 	}
 	
 	@Before
