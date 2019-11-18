@@ -5,9 +5,9 @@
 	<groupId>JunitTest</groupId>
 	<artifactId>JunitTest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<distributionManagement>
+	<repositories>
 	    <repository>
-		<id>central</id>
+	      	<id>central</id>
 		<name>netfvm-parti01-releases</name>
 		<url>http://netfvm-parti01/artifactory/libs-snapshot</url>
 	    </repository>
@@ -16,8 +16,7 @@
 		<name>netfvm-parti01-snapshots</name>
 		<url>http://netfvm-parti01/artifactory/libs-snapshot</url>
 	    </snapshotRepository>
-	</distributionManagement>
-
+	  </repositories>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
