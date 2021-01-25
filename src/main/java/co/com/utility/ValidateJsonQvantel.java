@@ -96,37 +96,7 @@ public class ValidateJsonQvantel {
     public static Object jsonGetConditions(String text, String key, List<JsonCondition> conditions) throws Exception {
         return jsonValue(text, key, true, conditions);
     }
-
-    private static Object arrayGetCondition(String text, String key, List<JsonCondition> conditions, boolean isArray) throws Exception {
-
-        Object value = null;
-
-        try {
-            JSONArray array = new JSONArray(text);
-            JSONArray newArray = new JSONArray();
-
-            for (int i = 0; i < array.length(); i++) {
-                Object item = jsonGet(array.get(i).toString(), key);
-                if (item != null) {
-                    if (validaCondition(array.get(i).toString(), conditions)) {
-                        newArray.put(item);
-                        value = item;
-                        if (!isArray) {
-                            break;
-                        }
-                    }
-                }
-            }
-            if (isArray) {
-                value = newArray.toString();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Error " + e.getMessage());
-        }
-        return value;
-    }
-
+   
     private static Object getKeyCondition(String json, String key) {
         Object item = null;
         try {
@@ -146,22 +116,22 @@ public class ValidateJsonQvantel {
         for (JsonCondition condition : conditions) {
             Object itemCondition = getKeyCondition(json, condition.getKey());
             if (itemCondition != null) {
-                if(condition.getValues()!=null){
+                if (condition.getValues() != null) {
                     boolean isOption = true;
                     for (String value : condition.getValues()) {
-                        if(!itemCondition.toString().equalsIgnoreCase(value)){
+                        if (!itemCondition.toString().equalsIgnoreCase(value)) {
                             isOption = false;
                         }
                     }
-                    
-                    if(isOption){
+
+                    if (isOption) {
                         return false;
                     }
-                    
-                }else if(condition.getValue()!=null  && !itemCondition.toString().equalsIgnoreCase(condition.getValue())){
+
+                } else if (condition.getValue() != null && !itemCondition.toString().equalsIgnoreCase(condition.getValue())) {
                     return false;
                 }
-                
+
             }
         }
         return true;
@@ -175,12 +145,7 @@ public class ValidateJsonQvantel {
                 key = key.substring(key.indexOf(".") + 1);
 
                 if (text.charAt(0) == '[') {
-                    if (conditions != null) {
-                        return arrayGetCondition(text, key, conditions, isArray);
-                    } else {
-                        return arrayGet(text, key, isArray);
-                    }
-
+                    return arrayGet(text, key, isArray,conditions);
                 } else {
                     return jsonValue(text, key, false, null);
                 }
@@ -191,7 +156,7 @@ public class ValidateJsonQvantel {
         }
     }
 
-    private static Object arrayGet(String text, String key, boolean isArray) throws Exception {
+    private static Object arrayGet(String text, String key, boolean isArray, List<JsonCondition> conditions) throws Exception {
 
         Object value = null;
 
@@ -202,10 +167,20 @@ public class ValidateJsonQvantel {
             for (int i = 0; i < array.length(); i++) {
                 Object item = jsonGet(array.get(i).toString(), key);
                 if (item != null) {
-                    newArray.put(item);
-                    value = item;
-                    if (!isArray) {
-                        break;
+                    if (conditions != null) {
+                        if (validaCondition(array.get(i).toString(), conditions)) {
+                            newArray.put(item);
+                            value = item;
+                            if (!isArray) {
+                                break;
+                            }
+                        }
+                    } else {
+                        newArray.put(item);
+                        value = item;
+                        if (!isArray) {
+                            break;
+                        }
                     }
                 }
             }
