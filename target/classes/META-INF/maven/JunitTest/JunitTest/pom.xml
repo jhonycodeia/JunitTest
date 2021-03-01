@@ -5,6 +5,25 @@
 	<groupId>JunitTest</groupId>
 	<artifactId>JunitTest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<repositories>
+		<repository>
+			<id>central</id>
+			<name>libs-central</name>
+			<url>http://netfvm-parti01/artifactory/libs-central</url>
+		</repository>
+		<repository>
+			<snapshots />
+			<id>snapshots</id>
+			<name>libs-snapshot</name>
+			<url>http://netfvm-parti01/artifactory/libs-snapshot</url>
+		</repository>
+		<repository>
+			<snapshots />
+			<id>release</id>
+			<name>libs-release</name>
+			<url>http://netfvm-parti01/artifactory/libs-release</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
@@ -13,7 +32,18 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-			<dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20190722</version>
+		</dependency>
+		<dependency>
+			<groupId>com.predic8</groupId>
+			<artifactId>soa-model-core</artifactId>
+			<version>1.6.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>3.141.59</version>
@@ -33,7 +63,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.9.8</version>
+			<version>2.9.10.1</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.xml</groupId>

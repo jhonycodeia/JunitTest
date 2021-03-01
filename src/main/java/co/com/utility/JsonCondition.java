@@ -1,4 +1,4 @@
-package co.com.tigo.modelo;
+package co.com.utility;
 
 public class JsonCondition {
 
