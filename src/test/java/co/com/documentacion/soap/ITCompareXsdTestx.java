@@ -23,7 +23,7 @@ import org.junit.Test;
  * @author usuario
  *         https://stackoverflow.com/questions/8064101/xml-wsdl-comparison-tool
  */
-public class CompareXsdTest {
+public class ITCompareXsdTestx {
 
 	private static final String MENSAJE_COMPARE_XSD_SIZE = "verificando lista de diferencias";
 	private static final int COMPARE_XSD_SIZE = 1;

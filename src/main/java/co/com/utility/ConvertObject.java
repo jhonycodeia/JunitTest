@@ -37,7 +37,7 @@ public class ConvertObject {
 	public <T> T jsonToObject(String json, TypeReference<?> name) throws IOException {
 		if (name == null || name.getClass().isInstance("String"))
 			return (T) json;
-		return mapper.readValue(json, name);
+		return (T) mapper.readValue(json, name);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -51,7 +51,7 @@ public class ConvertObject {
 	public <T> T byteToObject(byte[] bytes, TypeReference<?> name) throws IOException {
 		if (name == null || name.getClass().isInstance("byte[]"))
 			return (T) bytes;
-		return mapper.readValue(bytes, name);
+		return (T) mapper.readValue(bytes, name);
 	}
 
 	public String objectToJson(Object value) throws JsonProcessingException {
@@ -76,12 +76,12 @@ public class ConvertObject {
 
 	// new TypeReference<Map<String, Object>>(){}
 	public <T> T convertir(Object value, TypeReference<?> name) {
-		return mapper.convertValue(value, name);
+		return (T) mapper.convertValue(value, name);
 	}
 
 	// new TypeReference<Map<String, Object>>(){}
 	public <T> T convertirMap(Map<?, ?> value, TypeReference<?> name) {
-		return mapper.convertValue(value, name);
+		return (T) mapper.convertValue(value, name);
 	}
 
 	public String objectToXML(Object value,boolean format) throws JAXBException {
