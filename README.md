@@ -7,26 +7,47 @@ Running
 
 
 `@author name` Who wrote it
+
 `@version version` What version for example 1.0
+
 `@param name description` Information of Input of method
+
 `@return description` Information of Output of method
+
 `@throws classname description` Information of mistakes or exception of method
+
 `@since JDK1.8` Information about what version support of method
+
 `@deprecated description` Indicates should no longer use ser or is not supported
+
 `@see #field` reference
+
 `@see #Constructor(Type, Type...)` reference
+
 `@see #method(Type, Type...)` reference
+
 `@see Class` reference
+
 `@see Class#field` reference
+
 `@see Class#Constructor(Type, Type...)` reference
+
 `@see Class#method(Type, Type,...)` reference
+
 `@see package.Class` reference
+
 `@see package.Class#field` reference
+
 `@see package.Class#Constructor(Type, Type...)` reference
+
 `@see package.Class#method(Type, Type,...)`reference
+
 `@see package` reference
+
 `{@code offset}` Code inline
+
 `{@link java.awt.Panel class}` uses the same nomenclature as `@see`
+
 > Example
 
 
