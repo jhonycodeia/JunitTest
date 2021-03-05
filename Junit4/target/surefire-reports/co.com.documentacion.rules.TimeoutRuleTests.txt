@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: co.com.documentacion.rules.TimeoutRuleTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.067 s <<< FAILURE! - in co.com.documentacion.rules.TimeoutRuleTests
+testInfiniteLoop1(co.com.documentacion.rules.TimeoutRuleTests)  Time elapsed: 0.026 s  <<< ERROR!
+org.junit.runners.model.TestTimedOutException: test timed out after 20 milliseconds
+	at co.com.documentacion.rules.TimeoutRuleTests.testInfiniteLoop1(TimeoutRuleTests.java:22)
+
+testInfiniteLoop2(co.com.documentacion.rules.TimeoutRuleTests)  Time elapsed: 0.041 s  <<< ERROR!
+org.junit.runners.model.TestTimedOutException: test timed out after 20 milliseconds
+	at co.com.documentacion.rules.TimeoutRuleTests.testInfiniteLoop2(TimeoutRuleTests.java:29)
+
