@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import lombok.extern.java.Log;
+
+@Log
 @ExtendWith(MockitoExtension.class)
 public class CartTest {
 	
@@ -18,7 +21,7 @@ public class CartTest {
 				.isExpired(false)
 				.build();
 		
-		System.out.println(item);
+		log.info("el objecto creado es "+item);
 	}
 
 }
