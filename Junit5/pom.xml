@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>co.learn.unitesting</groupId>
-	<artifactId>unit-testing</artifactId>
+	<artifactId>Junit5Test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>unit-testing</name>
+	<name>Junit5Test</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
