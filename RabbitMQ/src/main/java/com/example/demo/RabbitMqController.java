@@ -55,4 +55,12 @@ public class RabbitMqController {
 		
 		return "Success";
 	}
+	
+	@GetMapping("/defaultExchange/{name}")
+	public String defaultExchange (@PathVariable String name) {
+		Person p = new Person(1L, name);
+		rabbitTemplate.convertAndSend("Mobile", p);
+		
+		return "Success";
+	}
 }
