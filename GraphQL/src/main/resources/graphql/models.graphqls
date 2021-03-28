@@ -1,0 +1,31 @@
+type SuperCharacter{
+    id: String!
+    name: String!
+    age: Int
+    group: SuperGroup
+}
+
+type SuperGroup{
+    name: String
+    orientation: Orientation
+    members: [SuperCharacter]
+}
+
+enum Orientation{
+    HERO
+    VILLAIN
+}
+
+type Query{
+    characters: [SuperCharacter]!
+    characterById(id: String): SuperCharacter
+
+    groups: [SuperGroup]!
+    groupByName(name:String): SuperGroup
+}
+
+type Mutation {
+    addCharacter(name:String age:Int): SuperCharacter
+    addCharacterGroup(name:String age:Int group:String): SuperCharacter
+    addGroup(name:String orientation:Orientation): SuperGroup
+}
