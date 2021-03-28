@@ -1,7 +1,0 @@
--------------------------------------------------------------------------------
-Test set: co.com.documentacion.rules.VerifierRuleTests
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in co.com.documentacion.rules.VerifierRuleTests
-example2(co.com.documentacion.rules.VerifierRuleTests)  Time elapsed: 0 s  <<< FAILURE!
-org.junit.ComparisonFailure: expected:<[test] verify> but was:<[prueba] verify>
-
