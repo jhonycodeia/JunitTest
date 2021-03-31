@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: co.com.documentacion.suites.SuitesTests
--------------------------------------------------------------------------------
-Tests run: 20, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 1 s - in co.com.documentacion.suites.SuitesTests
