@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,11 +39,57 @@ public class EpaymentTest {
 		}
 	}
 	
+	@Test
+	public void selenium() throws InterruptedException {	
+				
+		
+			//driver de espera
+		try {
+			WebElement element;
+			WebDriverWait wait = new WebDriverWait(driver,10);
+			
+			/** open **/
+			driver.get("https://jhonycodeia.github.io/portafolio-en/index.html");
+			//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"formulario:itNumeroIdentificacion\"]")));
+			/** find **/
+			//busca en el dom por propiedad value return unico
+			element = driver.findElement(By.linkText("About Me"));
+			//busca en el dom por propiedad name return unico
+			element = driver.findElement(By.name("Name"));
+			//busca en el dom por propiedad id return unico
+			element = driver.findElement(By.id("About Me"));
+			//busca en el dom por nombre clase id return multiple
+			element = driver.findElement(By.className("proyectos"));
+			//busca en el dom por notacion xpath return unico
+			element = driver.findElement(By.xpath("//span[contains(text(),'Recaudos')]"));
+			//busca en el dom por notacion css id return multiple
+			element = driver.findElement(By.cssSelector(".proyectos"));
+			
+			/** action **/
+			//write
+			driver.findElement(By.xpath("//span[contains(text(),'Recaudos')]")).sendKeys(Keys.RETURN);
+			//click radiobox,checkbox,button, any
+			driver.findElement(By.xpath("//span[contains(text(),'Recaudos')]")).click();
+			//selector combobox
+			Select select = new Select(element);
+			select.selectByVisibleText("Colmbia");
+			select.selectByIndex(2);
+			select.selectByValue("colombia");
+			//js
+			JavascriptExecutor jse = (JavascriptExecutor)driver;
+			jse.executeScript("window.scrollBy(0,250)");
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+			
+	}
+	
 	@Ignore
 	@Test
 	public void pagarIdentificacion() throws InterruptedException {	
 				
-		for (int i = 0; i < 2; i++) {
+		
 			//driver de espera
 			WebDriverWait wait = new WebDriverWait(driver,10);
 			
@@ -92,7 +139,7 @@ public class EpaymentTest {
 			
 			driver.switchTo().alert().accept();			
 			driver.manage().timeouts().implicitlyWait(1,TimeUnit.SECONDS);		
-		}		
+				
 		
 		Thread.sleep(10000);	
 		
@@ -102,7 +149,7 @@ public class EpaymentTest {
 	@Test
 	public void pagarReferencia() throws InterruptedException {	
 				
-		for (int i = 0; i < 1; i++) {
+		
 			//driver de espera
 			WebDriverWait wait = new WebDriverWait(driver,10);
 			
@@ -154,7 +201,7 @@ public class EpaymentTest {
 			
 			driver.switchTo().alert().accept();			
 			driver.manage().timeouts().implicitlyWait(1,TimeUnit.SECONDS);	*/	
-		}		
+				
 		
 		Thread.sleep(10000);	
 		
@@ -164,7 +211,7 @@ public class EpaymentTest {
 	@Test
 	public void pagarBarra() throws InterruptedException {	
 				
-		for (int i = 0; i < 1; i++) {
+		
 			//driver de espera
 			WebDriverWait wait = new WebDriverWait(driver,20);
 			
@@ -215,7 +262,7 @@ public class EpaymentTest {
 			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 			driver.switchTo().alert().accept();			
 			driver.manage().timeouts().implicitlyWait(1,TimeUnit.SECONDS);	*/	
-		}		
+				
 		
 		Thread.sleep(10000);	
 		
