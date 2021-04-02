@@ -1,6 +1,9 @@
 # JunitTest
 Running
 `mvn -U clean verify install -Djava.awt.headless=true -Dtest=MainTestSuite -DfailIfNoTests=false -Dmaven.test.failure.ignore=true`
+`mvn test -Dcucumber.options=”src/test/java/Features/smoketest.feature.`
+
+Gherkin lenguaje
 
 Spring Boot projects with versions >= 2.2.0 use JUnit 5 by default.
 

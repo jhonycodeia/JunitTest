@@ -2,6 +2,8 @@ package co.com.documentacion.web;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.AfterClass;
@@ -15,6 +17,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -27,6 +31,9 @@ public class ExpediaTest {
 	private static boolean chrome = true;
 	private static String url = "https://www.expedia.com/";
 	private String selector;
+	
+	@FindBy(how = How.NAME, using = "q")
+    private WebElement searchBox;
 
 	@BeforeClass
 	public static void cargar() {
@@ -71,6 +78,10 @@ public class ExpediaTest {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(selector)));
 			element = driver.findElement(By.xpath(selector));
 			element.click();
+			
+			//swith window
+			List<String> windows = new ArrayList<>(driver.getWindowHandles());
+			driver.switchTo().window(windows.get(1));
 			
 			Thread.sleep(10000);
 		} catch (InterruptedException e) {
